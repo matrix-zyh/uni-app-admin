@@ -1,0 +1,157 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/theater/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/release/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/studio/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/exception/404",
+      "style": {
+        "navigationBarTitleText": "页面找不到了"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages-home",
+      "pages": [
+        {
+          "path": "pages/module/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-theater",
+      "pages": [
+        {
+          "path": "pages/module/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-release",
+      "pages": [
+        {
+          "path": "pages/module/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-studio",
+      "pages": [
+        {
+          "path": "pages/module/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-mine",
+      "pages": [
+        {
+          "path": "pages/module/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages-home/pages/module/index": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
+    "pages-theater/pages/module/index": {
+      "network": "all",
+      "packages": ["pages-theater"]
+    },
+    "pages-release/pages/module/index": {
+      "network": "all",
+      "packages": ["pages-release"]
+    },
+    "pages-studio/pages/module/index": {
+      "network": "all",
+      "packages": ["pages-studio"]
+    },
+    "pages-mine/pages/module/index": {
+      "network": "all",
+      "packages": ["pages-mine"]
+    }
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Matrix",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#909399",
+    "selectedColor": "#303133",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index"
+      },
+      {
+        "pagePath": "pages/theater/index"
+      },
+      {
+        "pagePath": "pages/release/index"
+      },
+      {
+        "pagePath": "pages/studio/index"
+      },
+      {
+        "pagePath": "pages/mine/index"
+      }
+    ]
+  }
+}
