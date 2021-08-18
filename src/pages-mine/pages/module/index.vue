@@ -19,7 +19,7 @@
         headerTitle: '',
         // 自定义 navBar 导航样式
         background: {
-          'background-image': 'linear-gradient(45deg, rgb(144, 0, 255), rgb(94, 0, 255))'
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         }
       }
     },

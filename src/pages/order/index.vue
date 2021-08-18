@@ -5,12 +5,12 @@
     <view class="page-content">
       <view class="u-page">
         <!-- 所有内容的容器 -->
-        <hello-world title="发布-点击图片试试" @change="pageRouter" />
+        <hello-world title="订单-点击图片试试" router-name="order-index" />
       </view>
     </view>
 
     <!-- 与包裹页面所有内容的元素u-page同级，且在它的下方 -->
-    <u-tabbar :list="user_menu" :mid-button="true" />
+    <u-tabbar :list="user_menu" />
   </view>
 </template>
 
@@ -26,22 +26,13 @@
         headerTitle: '',
         // 自定义 navBar 导航样式
         background: {
-          'background-image': 'linear-gradient(45deg, rgb(57, 181, 74), rgb(141, 198, 63))'
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         },
         user_menu: cookie.menu()
       }
     },
     onLoad() {
       this.headerTitle = this.$Route.meta.title
-    },
-    methods: {
-      /**
-       * 路由跳转
-       * @author Matrix<matrix.zyh@gmail.com>
-       */
-      pageRouter() {
-        this.$Router.push({ name: 'release-index' })
-      }
     }
   }
 </script>

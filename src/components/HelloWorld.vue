@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <image class="logo" src="@/static/images/logo.png" @click="$emit('change')"></image>
+    <image class="logo" src="@/static/images/logo.png" @click="pageRouter"></image>
     <text class="title text-gray">{{ title }}</text>
   </view>
 </template>
@@ -13,6 +13,25 @@
         type: String,
         required: false,
         default: 'Hello World'
+      },
+      // 跳转路由的 name
+      routerName: {
+        type: String,
+        required: false,
+        default: ''
+      }
+    },
+    methods: {
+      /**
+       * 路由跳转
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      pageRouter() {
+        if (!this.routerName) {
+          this.$u.toast('请指定路由跳转 name ！')
+          return
+        }
+        this.$Router.push({ name: this.routerName })
       }
     }
   }

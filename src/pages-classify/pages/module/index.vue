@@ -7,7 +7,7 @@
       back-icon-color="#fff"
     />
 
-    <view class="content"> 放映厅-子包内容 </view>
+    <view class="content"> 分类-子包内容 </view>
   </view>
 </template>
 
@@ -19,7 +19,7 @@
         headerTitle: '',
         // 自定义 navBar 导航样式
         background: {
-          'background-image': 'linear-gradient(45deg, rgb(255, 151, 0), rgb(237, 28, 36))'
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         }
       }
     },

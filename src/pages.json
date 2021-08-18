@@ -16,19 +16,19 @@
       }
     },
     {
-      "path": "pages/theater/index",
+      "path": "pages/classify/index",
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/release/index",
+      "path": "pages/commodity/index",
       "style": {
         "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/studio/index",
+      "path": "pages/order/index",
       "style": {
         "navigationStyle": "custom"
       }
@@ -42,7 +42,7 @@
     {
       "path": "pages/exception/404",
       "style": {
-        "navigationBarTitleText": "页面找不到了"
+        "navigationStyle": "custom"
       }
     }
   ],
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "root": "pages-theater",
+      "root": "pages-classify",
       "pages": [
         {
           "path": "pages/module/index",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "root": "pages-release",
+      "root": "pages-commodity",
       "pages": [
         {
           "path": "pages/module/index",
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "root": "pages-studio",
+      "root": "pages-order",
       "pages": [
         {
           "path": "pages/module/index",
@@ -108,17 +108,17 @@
       "network": "all",
       "packages": ["__APP__"]
     },
-    "pages-theater/pages/module/index": {
+    "pages-classify/pages/module/index": {
       "network": "all",
-      "packages": ["pages-theater"]
+      "packages": ["pages-classify"]
     },
-    "pages-release/pages/module/index": {
+    "pages-commodity/pages/module/index": {
       "network": "all",
-      "packages": ["pages-release"]
+      "packages": ["pages-commodity"]
     },
-    "pages-studio/pages/module/index": {
+    "pages-order/pages/module/index": {
       "network": "all",
-      "packages": ["pages-studio"]
+      "packages": ["pages-order"]
     },
     "pages-mine/pages/module/index": {
       "network": "all",
@@ -141,13 +141,13 @@
         "pagePath": "pages/home/index"
       },
       {
-        "pagePath": "pages/theater/index"
+        "pagePath": "pages/classify/index"
       },
       {
-        "pagePath": "pages/release/index"
+        "pagePath": "pages/commodity/index"
       },
       {
-        "pagePath": "pages/studio/index"
+        "pagePath": "pages/order/index"
       },
       {
         "pagePath": "pages/mine/index"

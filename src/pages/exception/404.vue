@@ -1,8 +1,32 @@
 <template>
   <view class="container">
+    <u-navbar
+      :title="headerTitle"
+      :background="background"
+      title-color="#fff"
+      back-icon-color="#fff"
+    />
     <image src="@/static/images/exception/404.png"></image>
   </view>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        // 标题
+        headerTitle: '',
+        // 自定义 navBar 导航样式
+        background: {
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
+        }
+      }
+    },
+    onLoad() {
+      this.headerTitle = this.$Route.meta.title
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   .container {

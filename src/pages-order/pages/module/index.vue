@@ -7,7 +7,7 @@
       back-icon-color="#fff"
     />
 
-    <view class="content"> 发布-子包内容 </view>
+    <view class="content"> 订单-子包内容 </view>
   </view>
 </template>
 
@@ -19,7 +19,7 @@
         headerTitle: '',
         // 自定义 navBar 导航样式
         background: {
-          'background-image': 'linear-gradient(45deg, rgb(57, 181, 74), rgb(141, 198, 63))'
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         }
       }
     },

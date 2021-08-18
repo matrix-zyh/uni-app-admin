@@ -1,39 +1,38 @@
 export default [
   {
     pagePath: '/pages/home/index',
-    iconPath: 'home',
-    selectedIconPath: 'home-fill',
+    iconPath: '/static/images/tabBar/home.png',
+    selectedIconPath: '/static/images/tabBar/home-fill.png',
     text: '首页',
     count: 2,
     isDot: true,
     customIcon: false
   },
   {
-    pagePath: '/pages/theater/index',
-    iconPath: 'photo',
-    selectedIconPath: 'photo-fill',
-    text: '放映厅',
+    pagePath: '/pages/classify/index',
+    iconPath: '/static/images/tabBar/classify.png',
+    selectedIconPath: '/static/images/tabBar/classify-fill.png',
+    text: '分类',
     customIcon: false
   },
   {
-    pagePath: '/pages/release/index',
-    iconPath: 'https://cdn.uviewui.com/uview/common/min_button.png',
-    selectedIconPath: 'https://cdn.uviewui.com/uview/common/min_button_select.png',
-    text: '发布',
-    midButton: true,
+    pagePath: '/pages/commodity/index',
+    iconPath: '/static/images/tabBar/commodity.png',
+    selectedIconPath: '/static/images/tabBar/commodity-fill.png',
+    text: '商品',
     customIcon: false
   },
   {
-    pagePath: '/pages/studio/index',
-    iconPath: 'play-right',
-    selectedIconPath: 'play-right-fill',
-    text: '直播',
+    pagePath: '/pages/order/index',
+    iconPath: '/static/images/tabBar/order.png',
+    selectedIconPath: '/static/images/tabBar/order-fill.png',
+    text: '订单',
     customIcon: false
   },
   {
     pagePath: '/pages/mine/index',
-    iconPath: 'account',
-    selectedIconPath: 'account-fill',
+    iconPath: '/static/images/tabBar/mine.png',
+    selectedIconPath: '/static/images/tabBar/mine-fill.png',
     text: '我的',
     count: 23,
     isDot: false,

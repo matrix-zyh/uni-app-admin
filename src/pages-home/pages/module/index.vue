@@ -7,7 +7,7 @@
       back-icon-color="#fff"
     />
 
-    <view class="content"> 主页-子包内容 </view>
+    <view class="content"> 首页-子包内容 </view>
   </view>
 </template>
 
@@ -19,7 +19,7 @@
         headerTitle: '',
         // 自定义 navBar 导航样式
         background: {
-          'background-image': 'linear-gradient(45deg, rgb(244, 63, 59), rgb(236, 0, 140))'
+          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         }
       }
     },
