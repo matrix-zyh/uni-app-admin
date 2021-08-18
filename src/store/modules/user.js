@@ -4,13 +4,10 @@ export default {
 
   state: {
     // 存储用户信息
-    user_info: {},
-    // 存储用户权限菜单
-    user_menu: []
+    user_info: {}
   },
 
   mutations: {
-    SET_USER_INFO: (state, info) => (state.user_info = info),
-    SET_USER_MENU: (state, menu) => (state.user_menu = menu)
+    SET_USER_INFO: (state, info) => (state.user_info = info)
   }
 }
