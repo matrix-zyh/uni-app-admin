@@ -4,13 +4,13 @@
       <image src="@/static/images/banner/page-banner.png" />
       <view
         :style="[{ width: '100%', height: CustomBar + 'px' }]"
-        style="position: absolute; z-index: 1"
+        style="position: absolute; z-index: 1; top: 0"
       >
         <view :style="style">
           <view
             class="text-white"
             :style="[{ height: '100%', top: StatusBar + 'px' }]"
-            style="font-size: 36upx; display: flex; align-items: center; justify-content: center"
+            style="font-size: 32upx; display: flex; align-items: center; justify-content: center"
             >{{ headerTitle }}</view
           >
         </view>

@@ -40,17 +40,6 @@
           <button class="cu-btn round line-white">查看</button>
         </view>
       </view>
-      <view
-        :style="[{ animationDelay: '0.4s' }]"
-        :class="{ 'animation-slide-bottom': toggleDelay }"
-        class="bg-gradual-red shadow-blur classify-off"
-      >
-        <view class="text-xl">库存管理</view>
-        <view class="margin-top-xm text-eee">记录每一次库存信息</view>
-        <view class="margin-top">
-          <button @click="stockEdit" class="cu-btn round line-white">管理</button>
-        </view>
-      </view>
     </view>
 
     <u-tabbar :list="user_menu" :mid-button="false"></u-tabbar>
@@ -95,14 +84,6 @@
        */
       commodityView() {
         // this.$Router.push({ name: 'commodity-list' })
-      },
-
-      /**
-       * 库存管理
-       * @author Matrix<matrix.zyh@gmail.com>
-       */
-      stockEdit() {
-        // this.$Router.push({ name: 'stock-list' })
       }
     },
     beforeRouteLeave(to, from, next) {

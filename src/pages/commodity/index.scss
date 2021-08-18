@@ -6,7 +6,7 @@
 .classify-enter {
   width: 335upx !important;
   padding: 30rpx;
-  background-image: url('https://www.zouyinghao.com/tea-house/images/classify/enter-product-category.png');
+  background-image: url('@/static/images/commodity/enter.png');
   background-position: right bottom, left top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -15,7 +15,7 @@
 .classify-list {
   width: 335upx !important;
   padding: 30rpx;
-  background-image: url('https://www.zouyinghao.com/tea-house/images/classify/product-category-list.png');
+  background-image: url('@/static/images/commodity/list.png');
   background-position: right bottom, left top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -24,7 +24,7 @@
 .classify-off {
   width: 335upx !important;
   padding: 30rpx;
-  background-image: url('https://www.zouyinghao.com/tea-house/images/classify/good-off-icon.png');
+  background-image: url('@/static/images/commodity/off.png');
   background-position: right bottom, left top;
   background-repeat: no-repeat;
   background-size: 100% 100%;

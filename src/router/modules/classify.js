@@ -4,7 +4,7 @@ const routes = [
     aliasPath: '/classify',
     name: 'classify',
     meta: {
-      title: '类别'
+      title: '分类'
     }
   },
   {
@@ -12,7 +12,7 @@ const routes = [
     aliasPath: '/classify/index',
     name: 'classify-index',
     meta: {
-      title: '类别-子包'
+      title: '分类-子包'
     }
   }
 ]
