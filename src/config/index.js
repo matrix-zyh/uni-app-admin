@@ -11,6 +11,8 @@ module.exports = {
   SERVER_STATIC_ICON: '/file/path',
   // 服务器获取应用上传文件路径
   SERVER_INTERFACE_FILE: '/file/path',
+  // 项目名称
+  PROJECT_NAME: '项目名称',
   // 当前请求类型 (true：域名、false：IP)
   REQUEST_TYPE: true
 }

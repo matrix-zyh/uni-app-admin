@@ -5,3 +5,7 @@ import { request, METHOD } from '@/http'
 export async function login(data) {
   return request(API.login, METHOD.POST, data, { custom: { token: false } })
 }
+
+export default {
+  login
+}
