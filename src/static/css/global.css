@@ -1,3 +1,17 @@
+.margin-top-xm {
+  margin-top: 15upx;
+}
+
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
 /* 适配 ios 底部安全区域 */
 .ios-safety {
   padding-bottom: calc(constant(safe-area-inset-bottom) / 2);

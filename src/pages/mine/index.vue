@@ -1,49 +1,140 @@
 <template>
   <view>
-    <u-navbar :is-back="false" :title="headerTitle" :background="background" title-color="#fff" />
-
-    <view class="page-content">
-      <view class="u-page">
-        <!-- 所有内容的容器 -->
-        <hello-world title="我的-点击图片试试" router-name="mine-index" />
-        <!-- 所有内容的容器 -->
-        <hello-world title="我的-点击跳转不存在的页面试试" router-name="mine-error" />
+    <view class="bg-image">
+      <image :src="banner_img" />
+      <view
+        :style="[{ width: '100%', height: CustomBar + 'px' }]"
+        style="position: absolute; z-index: 1"
+      >
+        <view :style="style">
+          <view
+            class="text-white"
+            :style="[{ height: '100%', top: StatusBar + 'px' }]"
+            style="font-size: 36upx; display: flex; align-items: center; justify-content: center"
+            >{{ headerTitle }}</view
+          >
+        </view>
+      </view>
+      <view class="statistics">
+        <view class="cu-list menu-avatar">
+          <view class="cu-item arrow">
+            <view
+              class="cu-avatar round xl"
+              style="
+                background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);
+              "
+            ></view>
+            <view class="content">
+              <view class="text-white text-lg">
+                <text>Matrix</text>
+                <text class="shop-sign">商家</text>
+              </view>
+              <view style="color: #dddae6" class="text-sm flex">
+                <view style="font-size: 26upx" class="text-cut">用户id：202105211314</view>
+              </view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
 
-    <!-- 与包裹页面所有内容的元素u-page同级，且在它的下方 -->
-    <u-tabbar :list="user_menu" />
+    <view class="wrap">
+      <view
+        :style="[{ animationDelay: '0.1s' }]"
+        :class="{ 'animation-slide-bottom': toggleDelay }"
+        class="wrap-content"
+      >
+        <view class="cu-list menu">
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/bill-flow.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">流水记录</text>
+            </view>
+          </view>
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/message.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">消息中心</text>
+            </view>
+          </view>
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/feedback.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">反馈</text>
+            </view>
+          </view>
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/info.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">当前版本</text>
+            </view>
+            <view class="action">
+              <text class="text-gray text-lg">v0.1.0</text>
+            </view>
+          </view>
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/setting.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">设置</text>
+            </view>
+          </view>
+          <view class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/mine/help.png" class="png" mode="aspectFit"></image>
+              <text class="text-black">帮助</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <u-tabbar :list="user_menu" :mid-button="false"></u-tabbar>
   </view>
 </template>
 
 <script>
-  import HelloWorld from '@comp/HelloWorld.vue'
-  import cookie from '@utils/cookie'
+  import { mapState } from 'vuex'
+  import Cookie from '@utils/cookie'
+  import { banner_img } from '@mock/base64'
 
   export default {
-    components: { HelloWorld },
     data() {
       return {
+        // 计算不同手机 navBar 安全高度
+        StatusBar: this.StatusBar,
+        CustomBar: this.CustomBar,
         // 标题
         headerTitle: '',
-        // 自定义 navBar 导航样式
-        background: {
-          'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
-        },
-        user_menu: cookie.menu()
+        // 动画
+        toggleDelay: false,
+        banner_img,
+        user_menu: Cookie.menu()
+      }
+    },
+    computed: {
+      ...mapState('base', ['server_static_file']),
+
+      style() {
+        var StatusBar = this.StatusBar
+        var CustomBar = this.CustomBar
+        var style = `height: ${CustomBar}px; padding-top: ${StatusBar}px;`
+        return style
       }
     },
     onLoad() {
       this.headerTitle = this.$Route.meta.title
+    },
+    onShow() {
+      this.toggleDelay = true
+    },
+    beforeRouteLeave(to, from, next) {
+      this.toggleDelay = false
+      next()
     }
   }
 </script>
 
-<style scoped>
-  .page-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+<style lang="scss" scoped>
+  @import '@/static/css/animation.css';
+  @import './index.scss';
 </style>
