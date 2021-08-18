@@ -11,6 +11,8 @@ Vue.use(Router)
 import bootstrap from './bootstrap'
 bootstrap({ Router, store })
 
+import '@style/global.css'
+
 // 引入 uView
 import uView from 'uview-ui'
 Vue.use(uView)
