@@ -19,6 +19,7 @@ module.exports = {
       resolve: {
         alias: {
           '@': resolve('src'),
+          '@mock': resolve('src/mock'),
           '@http': resolve('src/http'),
           '@utils': resolve('src/utils'),
           '@config': resolve('src/config'),
