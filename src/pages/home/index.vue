@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="bg-image">
-      <image :src="banner_img" />
+      <image src="@/static/images/banner/page-banner.png" />
       <view
         :style="[{ width: '100%', height: CustomBar + 'px' }]"
         style="position: absolute; z-index: 1"
@@ -24,7 +24,7 @@
       </view>
     </view>
 
-    <view class="wrap">
+    <view v-show="toggleDelay" class="wrap">
       <view class="content">
         <view
           :style="[{ animationDelay: '0.1s' }]"
@@ -236,7 +236,6 @@
 <script>
   import { mapState } from 'vuex'
   import Cookie from '@utils/cookie'
-  import { banner_img } from '@mock/base64'
 
   export default {
     data() {
@@ -277,7 +276,6 @@
         timeFilter: '',
         // 自定义时间筛选项
         customShow: false,
-        banner_img,
         user_menu: Cookie.menu()
       }
     },
@@ -392,8 +390,12 @@
       }
     },
     beforeRouteLeave(to, from, next) {
-      this.toggleDelay = false
-      next()
+      if (to.path !== from.path) {
+        this.toggleDelay = false
+        next()
+      } else {
+        next(false)
+      }
     }
   }
 </script>

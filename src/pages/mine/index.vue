@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="bg-image">
-      <image :src="banner_img" />
+      <image src="@/static/images/banner/page-banner.png" />
       <view
         :style="[{ width: '100%', height: CustomBar + 'px' }]"
         style="position: absolute; z-index: 1"
@@ -38,7 +38,7 @@
       </view>
     </view>
 
-    <view class="wrap">
+    <view v-show="toggleDelay" class="wrap">
       <view
         :style="[{ animationDelay: '0.1s' }]"
         :class="{ 'animation-slide-bottom': toggleDelay }"
@@ -95,7 +95,6 @@
 <script>
   import { mapState } from 'vuex'
   import Cookie from '@utils/cookie'
-  import { banner_img } from '@mock/base64'
 
   export default {
     data() {
@@ -107,7 +106,6 @@
         headerTitle: '',
         // 动画
         toggleDelay: false,
-        banner_img,
         user_menu: Cookie.menu()
       }
     },
@@ -128,8 +126,12 @@
       this.toggleDelay = true
     },
     beforeRouteLeave(to, from, next) {
-      this.toggleDelay = false
-      next()
+      if (to.path !== from.path) {
+        this.toggleDelay = false
+        next()
+      } else {
+        next(false)
+      }
     }
   }
 </script>

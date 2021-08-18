@@ -6,7 +6,7 @@
       :background="background"
       title-color="#fff"
     ></u-navbar>
-    <view class="grid col-2 padding-tb-sm padding-lr flex-justify-between">
+    <view v-show="toggleDelay" class="grid col-2 padding-tb-sm padding-lr flex-justify-between">
       <view
         :style="[{ animationDelay: '0.1s' }]"
         :class="{ 'animation-slide-bottom': toggleDelay }"
@@ -106,8 +106,12 @@
       }
     },
     beforeRouteLeave(to, from, next) {
-      this.toggleDelay = false
-      next()
+      if (to.path !== from.path) {
+        this.toggleDelay = false
+        next()
+      } else {
+        next(false)
+      }
     }
   }
 </script>

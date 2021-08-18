@@ -1,7 +1,7 @@
 <template>
   <view class="wrap">
     <view class="bg-image">
-      <image :src="bg_img" />
+      <image src="@/static/images/banner/login-banner.png" />
     </view>
     <view class="login">
       <view
@@ -48,7 +48,6 @@
 <script>
   import Cookie from '@utils/cookie'
   import { randomUUID } from '@utils/tools'
-  import { bg_img } from '@mock/base64'
   import menu from '@mock/menu'
 
   export default {
@@ -69,8 +68,7 @@
         rules: {
           username: [{ required: true, message: '请输入账号！', trigger: 'blur' }],
           password: [{ required: true, message: '请输入密码！', trigger: 'blur' }]
-        },
-        bg_img
+        }
       }
     },
     onShow() {
