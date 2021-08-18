@@ -5,7 +5,7 @@ import cookie from '@utils/cookie'
 const Router = createRouter({
   platform: process.env.VUE_APP_PLATFORM,
   routerErrorEach: (error, router) => {
-    if (error.type === 3) {
+    if (error.type === 0 || error.type === 3) {
       // 路由跳转锁 - 解锁
       router.$lockStatus = false
     }
