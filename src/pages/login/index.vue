@@ -1,7 +1,7 @@
 <template>
   <view class="wrap">
     <view class="bg-image">
-      <image src="@/static/images/banner/login-banner.png" />
+      <image src="https://i.loli.net/2021/08/19/7v9eU15dMucymgX.png" />
     </view>
     <view class="login">
       <view

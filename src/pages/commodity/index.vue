@@ -29,17 +29,6 @@
           <button @click="commodityView" class="cu-btn round line-white">查看</button>
         </view>
       </view>
-      <view
-        :style="[{ animationDelay: '0.3s' }]"
-        :class="{ 'animation-slide-bottom': toggleDelay }"
-        class="bg-gradual-red shadow-blur classify-off"
-      >
-        <view class="text-xl">下架商品</view>
-        <view class="margin-top-xm text-eee">下架商品记录、原因</view>
-        <view class="margin-top">
-          <button class="cu-btn round line-white">查看</button>
-        </view>
-      </view>
     </view>
 
     <u-tabbar :list="user_menu" :mid-button="false"></u-tabbar>
@@ -75,7 +64,7 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       addCommodity() {
-        // this.$Router.push({ name: 'commodity-edit' })
+        this.$Router.push({ name: 'commodity-edit' })
       },
 
       /**
@@ -83,7 +72,7 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       commodityView() {
-        // this.$Router.push({ name: 'commodity-list' })
+        this.$Router.push({ name: 'commodity-list' })
       }
     },
     beforeRouteLeave(to, from, next) {

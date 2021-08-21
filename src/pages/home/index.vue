@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="bg-image">
-      <image src="@/static/images/banner/page-banner.png" />
+      <image src="https://i.loli.net/2021/08/19/ud3erYbg6Pa8ExB.png" />
       <view
         :style="[{ width: '100%', height: CustomBar + 'px' }]"
         style="position: absolute; z-index: 1; top: 0"

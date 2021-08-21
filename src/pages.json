@@ -62,7 +62,13 @@
       "root": "pages-classify",
       "pages": [
         {
-          "path": "pages/module/index",
+          "path": "pages/edit/good-classify",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/list/good-classify",
           "style": {
             "navigationStyle": "custom"
           }
@@ -73,7 +79,19 @@
       "root": "pages-commodity",
       "pages": [
         {
-          "path": "pages/module/index",
+          "path": "pages/edit/commodity",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/list/commodity",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/detail/commodity",
           "style": {
             "navigationStyle": "custom"
           }
@@ -84,7 +102,37 @@
       "root": "pages-order",
       "pages": [
         {
-          "path": "pages/module/index",
+          "path": "pages/edit/user",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/list/user",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/edit/order",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/list/order",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/view/order",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/list/commodity",
           "style": {
             "navigationStyle": "custom"
           }
@@ -95,7 +143,13 @@
       "root": "pages-mine",
       "pages": [
         {
-          "path": "pages/module/index",
+          "path": "pages/log/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "pages/about/index",
           "style": {
             "navigationStyle": "custom"
           }
@@ -104,23 +158,23 @@
     }
   ],
   "preloadRule": {
-    "pages-home/pages/module/index": {
+    "pages/home/index": {
       "network": "all",
       "packages": ["__APP__"]
     },
-    "pages-classify/pages/module/index": {
+    "pages/classify/index": {
       "network": "all",
       "packages": ["pages-classify"]
     },
-    "pages-commodity/pages/module/index": {
+    "pages/commodity/index": {
       "network": "all",
       "packages": ["pages-commodity"]
     },
-    "pages-order/pages/module/index": {
+    "pages/order/index": {
       "network": "all",
       "packages": ["pages-order"]
     },
-    "pages-mine/pages/module/index": {
+    "pages/mine/index": {
       "network": "all",
       "packages": ["pages-mine"]
     }

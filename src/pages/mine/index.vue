@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="bg-image">
-      <image src="@/static/images/banner/page-banner.png" />
+      <image src="https://i.loli.net/2021/08/19/ud3erYbg6Pa8ExB.png" />
       <view
         :style="[{ width: '100%', height: CustomBar + 'px' }]"
         style="position: absolute; z-index: 1; top: 0"
@@ -19,10 +19,8 @@
         <view class="cu-list menu-avatar">
           <view class="cu-item arrow">
             <view
-              class="cu-avatar round xl"
-              style="
-                background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);
-              "
+              class="cu-avatar round xl bg-white"
+              style="background-image: url(https://i.loli.net/2021/08/19/i9UZneMC2GXlBgt.png)"
             ></view>
             <view class="content">
               <view class="text-white text-lg">
@@ -45,48 +43,47 @@
         class="wrap-content"
       >
         <view class="cu-list menu">
-          <view class="cu-item arrow">
+          <view @click="gitHub" class="cu-item arrow">
             <view class="content">
-              <image src="@/static/images/mine/bill-flow.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">流水记录</text>
+              <image src="@/static/images/git/GitHub.png" class="png" mode="aspectFit"></image>
+              <text class="text-grey">GitHub</text>
+            </view>
+          </view>
+          <view @click="gitee" class="cu-item arrow">
+            <view class="content">
+              <image src="@/static/images/git/Gitee.png" class="png" mode="aspectFit"></image>
+              <text class="text-grey">Gitee</text>
+            </view>
+          </view>
+          <view @click="log" class="cu-item arrow">
+            <view class="content">
+              <text class="cuIcon-formfill text-green"></text>
+              <text class="text-grey">日志</text>
+            </view>
+          </view>
+          <view @click="actionShow = true" class="cu-item arrow">
+            <view class="content">
+              <text class="cuIcon-appreciatefill text-red"></text>
+              <text class="text-grey">赞赏支持</text>
             </view>
           </view>
           <view class="cu-item arrow">
-            <view class="content">
-              <image src="@/static/images/mine/message.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">消息中心</text>
-            </view>
+            <button class="cu-btn content" open-type="feedback">
+              <text class="cuIcon-writefill text-cyan"></text>
+              <text class="text-grey">意见反馈</text>
+            </button>
           </view>
-          <view class="cu-item arrow">
+          <view @click="about" class="cu-item arrow">
             <view class="content">
-              <image src="@/static/images/mine/feedback.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">反馈</text>
-            </view>
-          </view>
-          <view class="cu-item arrow">
-            <view class="content">
-              <image src="@/static/images/mine/info.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">当前版本</text>
-            </view>
-            <view class="action">
-              <text class="text-gray text-lg">v0.1.0</text>
-            </view>
-          </view>
-          <view class="cu-item arrow">
-            <view class="content">
-              <image src="@/static/images/mine/setting.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">设置</text>
-            </view>
-          </view>
-          <view class="cu-item arrow">
-            <view class="content">
-              <image src="@/static/images/mine/help.png" class="png" mode="aspectFit"></image>
-              <text class="text-black">帮助</text>
+              <image src="@/static/images/logo.png" class="png" mode="aspectFit"></image>
+              <text class="text-grey">关于 Admin</text>
             </view>
           </view>
         </view>
       </view>
     </view>
+
+    <u-action-sheet v-model="actionShow" :list="actionList" @click="actionOption" />
 
     <u-tabbar :list="user_menu" :mid-button="false"></u-tabbar>
   </view>
@@ -106,6 +103,8 @@
         headerTitle: '',
         // 动画
         toggleDelay: false,
+        actionShow: false,
+        actionList: [{ text: '支付宝' }, { text: '微信' }],
         user_menu: Cookie.menu()
       }
     },
@@ -125,6 +124,65 @@
     onShow() {
       this.toggleDelay = true
     },
+    methods: {
+      /**
+       * GitHub 地址
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      gitHub() {
+        uni.setClipboardData({
+          data: 'https://github.com/matrix-zyh/uni-app-admin',
+          success: function () {
+            uni.$u.toast('已复制！', 1000)
+          }
+        })
+      },
+
+      /**
+       * Gitee 地址
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      gitee() {
+        uni.setClipboardData({
+          data: 'https://gitee.com/matrix-zyh/uni-app-admin',
+          success: function () {
+            uni.$u.toast('已复制！', 1000)
+          }
+        })
+      },
+
+      /**
+       * log 日志
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      log() {
+        this.$Router.push({ name: 'log' })
+      },
+
+      /**
+       * 赞赏支持
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      actionOption(index) {
+        console.log(index, typeof index)
+        let urls =
+          index === 0
+            ? ['https://www.zouyinghao.com/images/pay/alipay.png']
+            : ['https://www.zouyinghao.com/images/pay/wechat.png']
+        wx.previewImage({
+          urls: urls,
+          current: urls[0]
+        })
+      },
+
+      /**
+       * 关于 Admin
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      about() {
+        this.$Router.push({ name: 'about' })
+      }
+    },
     beforeRouteLeave(to, from, next) {
       if (to.path !== from.path) {
         this.toggleDelay = false
@@ -139,4 +197,12 @@
 <style lang="scss" scoped>
   @import '@/static/css/animation.css';
   @import './index.scss';
+
+  .cu-list.menu > .cu-item .content > text[class*='cuIcon'] {
+    display: inline-block;
+    margin-right: 10upx;
+    width: 1.2em;
+    font-size: 38upx;
+    text-align: center;
+  }
 </style>

@@ -64,7 +64,7 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       enterProductCategory() {
-        // this.$Router.push({ name: 'classify-edit' })
+        this.$Router.push({ name: 'good-classify-edit' })
       },
 
       /**
@@ -72,7 +72,7 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       viewProductList() {
-        // this.$Router.push({ name: 'classify-list' })
+        this.$Router.push({ name: 'good-classify-list' })
       }
     },
     beforeRouteLeave(to, from, next) {
