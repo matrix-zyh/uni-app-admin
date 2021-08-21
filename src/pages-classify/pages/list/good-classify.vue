@@ -5,7 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <search v-model="searchValue" @filter="searchFilter" />
 
@@ -94,9 +94,6 @@
     },
     onLoad() {
       this.headerTitle = this.$Route.meta.title
-    },
-    onShow() {
-      console.log(this.classifyList)
     },
     methods: {
       /**
@@ -242,7 +239,6 @@
       /**
        * 删除父级分类
        * @param {String} id 父级分类Id
-       * @param {String} parentId 子级分类Id
        * @author Matrix<matrix.zyh@gmail.com>
        */
       classifyFatherDel(id) {

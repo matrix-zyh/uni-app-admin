@@ -70,8 +70,9 @@
 </template>
 
 <script>
-  import Empty from '../../../components/Empty.vue'
-  import Search from '../../../components/Search.vue'
+  import Empty from '@comp/Empty.vue'
+  import Search from '@comp/Search.vue'
+
   export default {
     components: { Empty, Search },
     data() {

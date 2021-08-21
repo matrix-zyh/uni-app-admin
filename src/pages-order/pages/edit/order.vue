@@ -5,7 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <view class="user-info padding-top padding-lr">
       <image src="@/static/images/order/user.png" />
@@ -79,7 +79,7 @@
       <block v-for="item in commodityList" :key="item.id">
         <view class="order-commodity__list padding">
           <view class="order-commodity__image">
-            <image src="https://www.zouyinghao.com/images/demo/5.jpg" />
+            <image src="https://i.loli.net/2021/08/21/25MJvf7eZ1oWt6m.jpg" />
           </view>
           <view class="order-commodity__info">
             <view class="order-commodity__info-header">
@@ -98,11 +98,7 @@
                 disabled
                 @click="chooseClassify(item.id)"
               />
-              <u-select
-                v-model="item.show"
-                :list="item.classifyList"
-                @confirm="classifyConfirm"
-              ></u-select>
+              <u-select v-model="item.show" :list="item.classifyList" @confirm="classifyConfirm" />
             </view>
             <view class="order-commodity__info-footer">
               <view class="order-commodity__info-footer__money">
@@ -116,7 +112,7 @@
                   bg-color="#ff6d00"
                   color="#fff"
                   @change="numberChange"
-                ></u-number-box>
+                />
               </view>
             </view>
           </view>
@@ -152,6 +148,7 @@
         background: {
           'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         },
+        // 默认时间
         defaultTime: formatDate(),
         form: {
           // 购买时间
@@ -198,6 +195,7 @@
       dateConfirm({ year, month, day }) {
         this.$set(this.form, 'dateTime', `${year}-${month}-${day}`)
       },
+
       /**
        * 选择城市回调
        * @param {Object} province 省份

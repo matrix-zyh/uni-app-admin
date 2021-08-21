@@ -1,12 +1,17 @@
 <template>
   <view>
-    <u-navbar :title="headerTitle" :background="background" title-color="#fff" back-icon-color="#fff"></u-navbar>
+    <u-navbar
+      :title="headerTitle"
+      :background="background"
+      title-color="#fff"
+      back-icon-color="#fff"
+    />
 
     <view>
       <view v-for="item in 3" :key="item" class="order-commodity u-border-bottom">
         <view class="order-commodity__list padding">
           <view class="order-commodity__image">
-            <image src="https://www.zouyinghao.com/images/demo/5.jpg" />
+            <image src="https://i.loli.net/2021/08/21/25MJvf7eZ1oWt6m.jpg" />
           </view>
           <view class="order-commodity__info">
             <view class="order-commodity__info-header">碧螺春礼盒装 400g</view>
@@ -56,7 +61,9 @@
       </view>
       <view class="commodity-detail">
         <view class="commodity-detail__title">备注</view>
-        <view class="commodity-detail__content">总要备注点什么，这人已经是老客户了，下次给他卖便宜点。</view>
+        <view class="commodity-detail__content"
+          >总要备注点什么，这人已经是老客户了，下次给他卖便宜点。</view
+        >
       </view>
       <view class="commodity-detail">
         <view class="commodity-detail__title">下单人</view>

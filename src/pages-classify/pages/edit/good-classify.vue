@@ -5,7 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <view class="padding">
       <view

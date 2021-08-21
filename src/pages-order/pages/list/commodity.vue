@@ -5,59 +5,57 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <search v-model="searchValue" @filter="searchFilter" />
 
-    <view>
-      <view class="padding ios-safety-btn-100">
-        <u-checkbox-group size="50" @change="checkboxGroupChange">
-          <view v-for="(item, index) in commodityList" :key="index" style="border-radius: 10upx">
-            <u-checkbox v-model="item.checked" :name="item.name">
-              <view @click.stop="" class="commodity-list margin-left-sm">
-                <view class="commodity-title">
-                  <view>{{ item.name }}</view>
-                  <view class="commodity-reserve">{{ `库存：${item.reserve}` }}</view>
+    <view class="padding ios-safety-btn-100">
+      <u-checkbox-group size="50" @change="checkboxGroupChange">
+        <view v-for="(item, index) in commodityList" :key="index" style="border-radius: 10upx">
+          <u-checkbox v-model="item.checked" :name="item.name">
+            <view @click.stop="" class="commodity-list margin-left-sm">
+              <view class="commodity-title">
+                <view>{{ item.name }}</view>
+                <view class="commodity-reserve">{{ `库存：${item.reserve}` }}</view>
+              </view>
+              <view class="commodity-content">
+                <view class="commodity-image">
+                  <image src="https://i.loli.net/2021/08/21/25MJvf7eZ1oWt6m.jpg" />
                 </view>
-                <view class="commodity-content">
-                  <view class="commodity-image">
-                    <image src="https://www.zouyinghao.com/images/demo/5.jpg" />
+                <view class="commodity-info">
+                  <view class="commodity-classify">
+                    <u-input
+                      type="select"
+                      v-model="item.classifyName"
+                      height="45"
+                      placeholder="请选择"
+                      :select-open="item.show"
+                      disabled
+                      @click="chooseClassify(item.id)"
+                    />
+                    <u-select
+                      v-model="item.show"
+                      :list="item.classifyList"
+                      @confirm="classifyConfirm"
+                    ></u-select>
                   </view>
-                  <view class="commodity-info">
-                    <view class="commodity-classify">
-                      <u-input
-                        type="select"
-                        v-model="item.classifyName"
-                        height="45"
-                        placeholder="请选择"
-                        :select-open="item.show"
-                        disabled
-                        @click="chooseClassify(item.id)"
-                      />
-                      <u-select
-                        v-model="item.show"
-                        :list="item.classifyList"
-                        @confirm="classifyConfirm"
-                      ></u-select>
-                    </view>
-                    <view>
-                      <u-number-box
-                        v-model="item.number"
-                        :max="item.reserve"
-                        @change="numberChange"
-                      ></u-number-box>
-                    </view>
-                    <view class="commodity-money">
-                      <text class="margin-right-xs text-sm">¥</text>
-                      <text class="text-lg">76.00</text>
-                    </view>
+                  <view>
+                    <u-number-box
+                      v-model="item.number"
+                      :max="item.reserve"
+                      @change="numberChange"
+                    ></u-number-box>
+                  </view>
+                  <view class="commodity-money">
+                    <text class="margin-right-xs text-sm">¥</text>
+                    <text class="text-lg">76.00</text>
                   </view>
                 </view>
               </view>
-            </u-checkbox>
-          </view>
-        </u-checkbox-group>
-      </view>
+            </view>
+          </u-checkbox>
+        </view>
+      </u-checkbox-group>
     </view>
 
     <view class="commodity-footer ios-safety">
@@ -97,6 +95,7 @@
         _commodityId: '',
         // 商品列表
         commodityList: goodsList,
+        // 选中的商品
         checkboxValues: []
       }
     },
@@ -151,7 +150,6 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       checkboxGroupChange(values) {
-        console.log('checkbox-group: ', values)
         this.checkboxValues = values
       },
 

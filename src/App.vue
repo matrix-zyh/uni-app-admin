@@ -40,9 +40,7 @@
         // 在这个试着打印路由信息瞧瞧 😊
       })
     },
-    onHide: function () {
-      // console.log('App Hide')
-    }
+    onHide: function () {}
   }
 </script>
 

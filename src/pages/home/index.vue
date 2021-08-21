@@ -93,11 +93,7 @@
               <text class="eChart-header__text">近7天</text>
             </view>
             <view class="eChart-content">
-              <view class="eChart-radius">
-                <!-- <view class="charts-box">
-                <qiun-data-charts type="ring" :chartData="chartData" :echartsH5="true" :echartsApp="true" background="none" />
-              </view> -->
-              </view>
+              <view class="eChart-radius"></view>
             </view>
           </view>
           <view class="eChart-layout margin-top-xl">
@@ -106,11 +102,7 @@
               <text class="eChart-header__text">近7天</text>
             </view>
             <view class="eChart-content">
-              <view class="eChart-radius">
-                <!-- <view class="charts-box">
-                <qiun-data-charts type="ring" :chartData="chartData" :echartsH5="true" :echartsApp="true" background="none" />
-              </view> -->
-              </view>
+              <view class="eChart-radius"></view>
             </view>
           </view>
         </view>
@@ -140,13 +132,7 @@
       </view>
     </view>
 
-    <u-popup
-      v-model="popupShow"
-      mode="bottom"
-      border-radius="36"
-      :mask-close-able="false"
-      safe-area-inset-bottom
-    >
+    <u-popup v-model="popupShow" mode="bottom" border-radius="36" safe-area-inset-bottom>
       <view class="padding-xl">
         <view class="text-lg" style="color: #222">选择时间区间</view>
         <view class="statistics-date">
@@ -276,6 +262,7 @@
         timeFilter: '',
         // 自定义时间筛选项
         customShow: false,
+        // TabBar 菜单
         user_menu: Cookie.menu()
       }
     },
@@ -293,6 +280,7 @@
         return (value) =>
           this.timeFilter === value ? 'statistics-content__list-select' : 'statistics-content__list'
       },
+
       chooseTime_text() {
         return (value) =>
           this.timeFilter === value
@@ -314,8 +302,7 @@
        * @author Matrix<matrix.zyh@gmai.com>
        */
       getMore() {
-        console.log('我是通知滚动横幅右侧箭头点击事件！')
-        this.$Router.push({ name: 'home-module' })
+        this.$u.toast('通知滚动横幅点击事件！')
       },
 
       /**

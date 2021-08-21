@@ -1,9 +1,9 @@
 {
   "name": "Matrix",
   "appid": "",
-  "description": "基于 uni-app 封装移动端多端通用模板",
-  "versionName": "0.0.1",
-  "versionCode": "1",
+  "description": "基于 uni-app 封装移动端跨端项目模板",
+  "versionName": "0.3.0",
+  "versionCode": "3",
   "transformPx": false,
   "app-plus": {
     /* 5+App特有相关 */ "usingComponents": true,

@@ -1,6 +1,11 @@
 <template>
   <view>
-    <u-navbar :title="headerTitle" :background="background" title-color="#fff" back-icon-color="#fff"></u-navbar>
+    <u-navbar
+      :title="headerTitle"
+      :background="background"
+      title-color="#fff"
+      back-icon-color="#fff"
+    />
 
     <u-index-list :scrollTop="-CustomBar" :index-list="indexList">
       <view v-for="(item, index) in list" :key="index">
@@ -15,6 +20,7 @@
 
 <script>
   import indexList from '@/mock/user.js'
+
   const letterArr = indexList.list.map((val) => {
     return val.letter
   })
@@ -22,6 +28,7 @@
   export default {
     data() {
       return {
+        CustomBar: this.CustomBar,
         // 标题
         headerTitle: '',
         // 动画
@@ -30,8 +37,9 @@
         background: {
           'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         },
-        CustomBar: this.CustomBar,
+        // 定位
         scrollTop: 0,
+        // 英文字母列表
         indexList: letterArr,
         list: indexList.list
       }

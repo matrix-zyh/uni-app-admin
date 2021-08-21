@@ -5,7 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <search v-model="searchValue" @filter="searchFilter">
       <u-tabs
@@ -63,16 +63,13 @@
       </block>
     </view>
     <view class="ios-safety"></view>
-
-    <!-- <empty /> -->
   </view>
 </template>
 
 <script>
-  import Empty from '@comp/Empty.vue'
-  import Search from '../../../components/Search.vue'
+  import Search from '@comp/Search.vue'
   export default {
-    components: { Empty, Search },
+    components: { Search },
     data() {
       return {
         // 标题

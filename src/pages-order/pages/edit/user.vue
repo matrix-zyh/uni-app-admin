@@ -5,8 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
-
+    />
     <view class="padding">
       <view
         :style="[{ animationDelay: '0.1s' }]"
@@ -66,7 +65,7 @@
       </view>
     </view>
 
-    <u-select v-model="letterSelectShow" :list="letterList" @confirm="letterChange"></u-select>
+    <u-select v-model="letterSelectShow" :list="letterList" @confirm="letterChange" />
     <city-select
       v-model="citySelectShow"
       :defaultRegion="defaultRegion"
@@ -106,13 +105,20 @@
         },
         // 表单数据
         user: {
+          // 姓名
           name: '',
+          // 性别
           sex: '',
+          // 手机号
           mobile: '',
+          // 姓名首字母
           letter: '',
+          // 城市
           province: '',
+          // 地址
           address: ''
         },
+        // 性别列表
         sexList: [
           { id: 1, label: '男', value: '1' },
           { id: 2, label: '女', value: '0' }

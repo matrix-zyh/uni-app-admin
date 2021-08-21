@@ -6,6 +6,7 @@
       title-color="#fff"
       back-icon-color="#fff"
     />
+
     <image src="@/static/images/exception/404.png"></image>
   </view>
 </template>

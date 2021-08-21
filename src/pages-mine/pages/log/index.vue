@@ -8,6 +8,14 @@
     />
 
     <log-time-line>
+      <view slot="version">v0.3.0</view>
+      <view slot="date">2021-08-21</view>
+      <view>✨ Added project example page</view>
+      <u-line color="info" border-style="dashed" :hair-line="false" margin="30rpx 0" />
+      <view>✨ 新增 项目示例页面</view>
+    </log-time-line>
+
+    <log-time-line>
       <view slot="version">v0.2.0</view>
       <view slot="date">2021-08-18</view>
       <view>✨ Added page path alias setting</view>
@@ -23,10 +31,10 @@
       <view slot="version">v0.1.0</view>
       <view slot="date">2021-08-10</view>
       <view
-        >✨ Create mobile cross-platform project template v0.1.0 based on uni-app development</view
+        >🎉 Create mobile cross-platform project template v0.1.0 based on uni-app development</view
       >
       <u-line color="info" border-style="dashed" :hair-line="false" margin="30rpx 0" />
-      <view>✨ 创建 基于uni-app开发移动跨平台项目模板v0.1.0</view>
+      <view>🎉 创建 基于uni-app开发移动跨平台项目模板v0.1.0</view>
     </log-time-line>
   </view>
 </template>

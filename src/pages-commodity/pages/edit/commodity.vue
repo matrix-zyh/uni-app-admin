@@ -5,7 +5,7 @@
       :background="background"
       title-color="#fff"
       back-icon-color="#fff"
-    ></u-navbar>
+    />
 
     <view class="padding">
       <view
@@ -61,8 +61,8 @@
       v-model="classifySelectShow"
       :list="classifyList"
       @confirm="classifyChange"
-    ></u-select>
-    <u-select v-model="unitSelectShow" :list="unitList" @confirm="unitChange"></u-select>
+    />
+    <u-select v-model="unitSelectShow" :list="unitList" @confirm="unitChange" />
 
     <view
       :style="[{ animationDelay: '0.2s' }]"
@@ -167,7 +167,6 @@
        * @author Matrix<matrix.zyh@gmai.com>
        */
       classifyChange(values) {
-        console.log(values)
         const len = values.length
         let typeName = ''
         let typeId = ''

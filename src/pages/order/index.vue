@@ -1,11 +1,7 @@
 <template>
   <view>
-    <u-navbar
-      :is-back="false"
-      :title="headerTitle"
-      :background="background"
-      title-color="#fff"
-    ></u-navbar>
+    <u-navbar :is-back="false" :title="headerTitle" :background="background" title-color="#fff" />
+
     <view v-show="toggleDelay" class="grid col-2 padding-tb-sm padding-lr flex-justify-between">
       <view
         :style="[{ animationDelay: '0.1s' }]"
@@ -72,6 +68,7 @@
         background: {
           'background-image': 'linear-gradient(45deg, rgb(90, 132, 244), rgb(137,111,236))'
         },
+        // TabBar 菜单
         user_menu: Cookie.menu()
       }
     },

@@ -25,10 +25,12 @@
             <view class="content">
               <view class="text-white text-lg">
                 <text>Matrix</text>
-                <text class="shop-sign">商家</text>
+                <text class="shop-sign">作者</text>
               </view>
               <view style="color: #dddae6" class="text-sm flex">
-                <view style="font-size: 26upx" class="text-cut">用户id：202105211314</view>
+                <view style="font-size: 26upx" class="text-cut"
+                  >Email：<text @click="email">matrix.zyh@gmail.com</text></view
+                >
               </view>
             </view>
           </view>
@@ -103,8 +105,11 @@
         headerTitle: '',
         // 动画
         toggleDelay: false,
+        // 操作菜单 收起/展开
         actionShow: false,
+        // 操作菜单列表
         actionList: [{ text: '支付宝' }, { text: '微信' }],
+        // TabBar 菜单
         user_menu: Cookie.menu()
       }
     },
@@ -126,27 +131,40 @@
     },
     methods: {
       /**
-       * GitHub 地址
+       * 复制 Email 地址
+       * @author Matrix<matrix.zyh@gmail.com>
+       */
+      email() {
+        uni.setClipboardData({
+          data: 'matrix.zyh@gmail.com',
+          success: function () {
+            uni.$u.toast('Email 已复制！', 1000)
+          }
+        })
+      },
+
+      /**
+       * 复制 GitHub 地址
        * @author Matrix<matrix.zyh@gmail.com>
        */
       gitHub() {
         uni.setClipboardData({
           data: 'https://github.com/matrix-zyh/uni-app-admin',
           success: function () {
-            uni.$u.toast('已复制！', 1000)
+            uni.$u.toast('GitHub 已复制！', 1000)
           }
         })
       },
 
       /**
-       * Gitee 地址
+       * 复制 Gitee 地址
        * @author Matrix<matrix.zyh@gmail.com>
        */
       gitee() {
         uni.setClipboardData({
           data: 'https://gitee.com/matrix-zyh/uni-app-admin',
           success: function () {
-            uni.$u.toast('已复制！', 1000)
+            uni.$u.toast('Gitee 已复制！', 1000)
           }
         })
       },
@@ -164,7 +182,6 @@
        * @author Matrix<matrix.zyh@gmail.com>
        */
       actionOption(index) {
-        console.log(index, typeof index)
         let urls =
           index === 0
             ? ['https://www.zouyinghao.com/images/pay/alipay.png']

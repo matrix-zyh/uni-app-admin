@@ -31,6 +31,7 @@
   export default {
     name: 'Search',
     props: {
+      // v-model
       value: {
         type: String,
         required: false,
@@ -64,6 +65,7 @@
       searchinput() {
         this.$emit('input', this.searchValue)
       },
+
       /**
        * 点击搜索按钮
        * @author Matrix<matrix@gmail.com>
