@@ -68,7 +68,8 @@
     "title": "Matrix",
     "domain": "<matrix.zyh@gmail.com>",
     "router": {
-      "mode": "history"
+      "mode": "history",
+      "base" : "/uni-app-admin/"
     }
   }
 }

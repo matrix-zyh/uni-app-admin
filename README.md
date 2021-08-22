@@ -123,6 +123,18 @@
   <img src="./src/static/images/group/wechatGroup.png" height="320px" style="display: inline-block;" />
 </p>
 
+## 快速预览
+<div style="display: flex;">
+  <div style="display: flex; flex-direction: column; justify-content: space-between; margin-right: 24px;">
+    <img src="./src/static/images/code/Admin-WeChat.jpg" width="260px" height="260px" style="margin-right: 24px;" />
+    <p style="width: 260px; font-size: 18px; font-weight: bold; text-align: center; margin-top: 15px;">微信小程序</p>
+  </div>
+  <div style="display: flex; flex-direction: column; justify-content: space-between;">
+    <img src="./src/static/images/code/Admin-H5.png" width="260px" height="260px" style="margin-right: 24px;" />
+    <p style="width: 260px; font-size: 18px; font-weight: bold; text-align: center; margin-top: 15px;">H5</p>
+  </div>
+</div>
+
 ## 打赏
 如果该项目对您有所帮助，可以请作者喝一杯咖啡。
 
